@@ -1,14 +1,20 @@
 import Head from 'next/head';
+import Nav from '../components/Nav';
 
 export default function Home() {
  return (
   <div>
    <Head>
-    <title>Create Next App</title>
+    <title>David Petrea - Full Stack Web Developer</title>
     <meta name='description' content='Web Portfolio built using Next.js.' />
     <link rel='icon' href='/favicon.ico' />
    </Head>
-   <h1 className='text-3xl font-bold text-red text-center'>Hello from development branch.</h1>
+   <Nav />
+   <main className='min-h-screen bg-surface-dark'>
+    <h1 className='text-4xl text-center text-white bg-surface-light font-header'>
+     Hello from development branch.
+    </h1>
+   </main>
   </div>
  );
 }
