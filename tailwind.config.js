@@ -7,9 +7,7 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        main: "url('/mainBg.jpg')",
-      },
+      
       colors: {
         white: {
           DEFAULT: "#F7F6F3",
