@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { GithubRepo } from '../../utils/types';
 
-const RepositoryCard = ({ repo }: { repo: GithubRepo }) => {
+const TechCard = ({ repo }: { repo: GithubRepo }) => {
  return (
   <div className='border border-green-100 rounded-lg shadow-dp02'>
    <div className='p-3 bg-green-500 rounded-t-md'>
@@ -29,4 +29,4 @@ const RepositoryCard = ({ repo }: { repo: GithubRepo }) => {
  );
 };
 
-export default RepositoryCard;
+export default TechCard;
