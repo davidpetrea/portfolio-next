@@ -2,6 +2,7 @@ import RepositoryCardList from '../components/home/RepositoryCardList';
 import { GithubRepo } from '../utils/types';
 import * as data from '../data.json';
 import Title from '../components/home/Title';
+import TechCardsContainer from '../components/home/TechCardsContainer';
 
 const getRepositories = async () => {
  const res = await fetch(`https://api.github.com/users/davidpetrea/repos`);
@@ -31,6 +32,9 @@ const Home = async () => {
  return (
   <div>
    <Title />
+   <div className='p-4'></div>
+   {/* Tech cards container */}
+   <TechCardsContainer />
    <div className='p-4'></div>
    <RepositoryCardList repos={repos} />
   </div>

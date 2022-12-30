@@ -24,8 +24,8 @@ const Title = () => {
    <Image
     src='/avatar.jpg'
     alt='Avatar'
-    width={400}
-    height={400}
+    width={360}
+    height={360}
     className='hidden my-2 rounded-full lg:block shadow-dp06'
    />
   </div>
