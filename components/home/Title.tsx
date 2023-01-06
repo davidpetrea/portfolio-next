@@ -17,7 +17,7 @@ const Title = () => {
      />
     </div>
     <h2 className='max-w-2xl mx-auto text-4xl font-bold text-center text-transparent lg:text-6xl lg:text-left bg-gradient-to-r from-green-100 to-green-300 lg:max-w-fit bg-clip-text'>
-     {"I'm"} a Full Stack Web Developer & Machine learning enthusiast
+     {"I'm"} a Full Stack Web Developer & Data analyst
     </h2>
    </div>
    {/* LArge view avatar */}

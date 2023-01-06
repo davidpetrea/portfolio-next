@@ -3,6 +3,7 @@ import { GithubRepo } from '../utils/types';
 import * as data from '../data.json';
 import Title from '../components/home/Title';
 import TechCardsContainer from '../components/home/TechCardsContainer';
+import ProjectsContainer from '../components/home/ProjectsContainer';
 
 const getRepositories = async () => {
  const res = await fetch(`https://api.github.com/users/davidpetrea/repos`);
@@ -32,6 +33,9 @@ const Home = async () => {
  return (
   <div>
    <Title />
+   <div className='p-4'></div>
+    {/* Projects slider */}
+   <ProjectsContainer />
    <div className='p-4'></div>
    {/* Tech cards container */}
    <TechCardsContainer />

@@ -15,8 +15,8 @@ const TechCardsContainer = () => {
      description={
       <>
        For my front end work, I mainly use the React library. Depending on the
-       scale & nature of the project, I find it easy to expand the toolset with
-       a wide variety of well maintained solutions
+       scale & nature of the project, I find it easy to expand the available
+       toolset with a wide variety of well maintained solutions
       </>
      }
     />
@@ -25,8 +25,8 @@ const TechCardsContainer = () => {
      logo={<NextLogo width={120} height={100} />}
      description={
       <>
-       Expanding on my love for React, I find Next.js to be the best Full Stack
-       solutions at the moment when SEO and rendering flexiblity are a priority
+       Expanding on my love for React, I find Next.js to be the best Meta
+       Framework at the moment. When SEO and rendering flexiblity are a priority, this is clearly my go to.
       </>
      }
     />
