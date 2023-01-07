@@ -5,7 +5,9 @@ type BuiltWithTechCardPropsType = {
 };
 
 const BuiltWithTechCard = ({ tech }: BuiltWithTechCardPropsType) => {
- return <div>{tech} b</div>;
+ return (
+  <div className='p-1 px-3 border border-green-100 rounded-full'>{tech}</div>
+ );
 };
 
 export default BuiltWithTechCard;

@@ -1,60 +1,11 @@
 'use client';
+
 import { Tab } from '@headlessui/react';
 import Image from 'next/image';
 import BuiltWithTechCard from '../cards/BuiltWithTechCard';
 import { Tech } from '../../utils/types';
-
-const projects = [
- {
-  title: 'Plugyn Store',
-  subtitle: 'Gaming services website',
-  description: (
-   <>
-    <p>
-     &emsp;&emsp;Plugyn Store is one of the biggest providers of digital
-     services in the Metin2 community. Their website is built using the Next
-     framework, with a combination of server side & client side rendering.
-    </p>
-    <div className='p-1'></div>
-    <p>
-     &emsp;&emsp;The only data fetching required is from a MongoDB Atlas
-     instance, which holds the real time prices for their services. Also, the
-     rating count is being fetched from the ElitePvpers Forum API.
-    </p>
-   </>
-  ),
-  imagePath: '/png/ps-3d.png',
-  technologies: ['next', 'typescript', 'tailwindCSS', 'mongoDB'],
- },
- {
-  title: 'M2Core Forum',
-  subtitle: 'Player to player trading platform',
-  description: (
-   <>
-    <p>This is some paragraph</p>
-    <p>This is other paragraph</p>
-    <p>This is some paragraph</p>
-    <p>This is some paragraph</p>
-   </>
-  ),
-  imagePath: '/png/ps-3d2.png',
-  technologies: ['next', 'typescript', 'tailwindCSS', 'mongoDB'],
- },
- {
-  title: 'Chat App',
-  subtitle: 'Live chatting App using websockets',
-  description: (
-   <>
-    <p>This is some paragraph</p>
-    <p>This is some paragraph</p>
-    <p>This is some paragraph</p>
-    <p>This is some paragraph</p>
-   </>
-  ),
-  imagePath: '/png/ps-3d.png',
-  technologies: ['next', 'typescript', 'tailwindCSS', 'mongoDB'],
- },
-];
+import Link from 'next/link';
+import projects from '../../utils/projects';
 
 const ProjectsContainer = () => {
  return (
@@ -82,8 +33,9 @@ const ProjectsContainer = () => {
       </Tab>
      ))}
     </Tab.List>
+
     <Tab.Panels className='w-full p-4'>
-     {projects.map(project => (
+     {projects.map((project, index) => (
       <Tab.Panel key={project.title}>
        <Project project={project} />
       </Tab.Panel>
@@ -100,6 +52,7 @@ type ProjectPropsType = {
  description: JSX.Element;
  imagePath: string;
  technologies: string[];
+ url: string;
 };
 
 const Project = ({ project }: { project: ProjectPropsType }) => {
@@ -120,12 +73,21 @@ const Project = ({ project }: { project: ProjectPropsType }) => {
     <div className='p-4'></div>
     {project.description}
     <div className='p-2'></div>
-    <p className='text-xl font-medium text-black'>Built with</p>
+    <p className='text-lg font-medium text-green-200'>Built with</p>
     <div className='flex flex-wrap gap-2'>
-     {project.technologies.map(tech => (
-      <BuiltWithTechCard key={tech} tech={tech as Tech} />
+     {(project.technologies as Tech[]).map(tech => (
+      <BuiltWithTechCard key={tech} tech={tech} />
      ))}
     </div>
+    <div className='p-2'></div>
+    <p className='text-lg font-medium text-green-200'>Visit website</p>
+    <Link
+     href={project.url}
+     target='_blank'
+     className='text-sm font-medium hover:text-black'
+    >
+     {project.url}
+    </Link>
    </div>
   </div>
  );
