@@ -1,4 +1,3 @@
-
 import { GithubRepo } from '../../utils/types';
 import RepositoryCard from '../cards/RepositoryCard';
 import { GithubIcon } from '../../assets/svg/SvgComponents';

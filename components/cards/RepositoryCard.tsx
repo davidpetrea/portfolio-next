@@ -6,7 +6,7 @@ const RepositoryCard = ({ repo }: { repo: GithubRepo }) => {
   <div className='border border-green-100 rounded-lg shadow-dp02'>
    <div className='p-3 bg-green-500 rounded-t-md'>
     <Link
-     href={repo.url}
+     href={repo.html_url}
      target='_blank'
      rel='noreferrer'
      className='font-medium text-black hover:underline'

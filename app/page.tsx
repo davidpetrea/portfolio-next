@@ -1,6 +1,6 @@
 import RepositoryCardList from '../components/home/RepositoryCardList';
 import { GithubRepo } from '../utils/types';
-import * as data from '../data.json';
+import data from '../data.json';
 import Title from '../components/home/Title';
 import TechCardsContainer from '../components/home/TechCardsContainer';
 import ProjectsContainer from '../components/home/ProjectsContainer';
@@ -18,13 +18,13 @@ const getRepositories = async () => {
 
 const Home = async () => {
  //const repos = await getRepositories();
-
+ const repoList: GithubRepo[] = data.data;
  //read data from data.json file
- const repos = data.data.map(e => {
+ const repos = repoList.map<GithubRepo>(e => {
   return {
    id: e.id,
    name: e.name,
-   url: e.html_url,
+   html_url: e.html_url,
    description: e.description,
    language: e.language,
   };
@@ -34,7 +34,7 @@ const Home = async () => {
   <div>
    <Title />
    <div className='p-4'></div>
-    {/* Projects slider */}
+   {/* Projects slider */}
    <ProjectsContainer />
    <div className='p-4'></div>
    {/* Tech cards container */}
