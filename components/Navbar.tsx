@@ -4,6 +4,7 @@ import {
   LinkedInLogo,
   MainLogo,
 } from '../assets/svg/SvgComponents';
+import { githubLink, linkedInLink } from '../utils/links';
 
 const Navbar = () => {
   return (
@@ -21,20 +22,17 @@ const Navbar = () => {
             Projects
           </Link>
           <Link
-            href='/contact'
+            href='#contact'
             className='hidden md:inline-block hover:bg-green-600 hover:shadow-dp04 p-2 px-4 transition duration-100 ease-linear rounded-lg'
           >
             Contact
           </Link>
         </div>
         <div className='flex items-center gap-4'>
-          <Link href='https://github.com/davidpetrea' target='_blank'>
+          <Link href={githubLink} target='_blank'>
             <GithubIcon className='w-10 h-10' />
           </Link>
-          <Link
-            href='https://linkedin.com/in/david-petrea-b2a947176'
-            target='_blank'
-          >
+          <Link href={linkedInLink} target='_blank'>
             <LinkedInLogo className='w-8 h-8' />
           </Link>
         </div>

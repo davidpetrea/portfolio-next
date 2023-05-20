@@ -46,6 +46,14 @@ const Home = async () => {
     <div>
       <Title />
       <div className='p-4'></div>
+      <p className='max-w-[34rem] text-center md:text-left text-lg text-green-100'>
+        As a self-taught full stack web developer, I have honed my skills
+        through hands-on experience and a relentless pursuit of knowledge in the
+        ever-evolving world of web development. I have developed a deep affinity
+        for React and the limitless possibilities it offers in creating seamless
+        user experiences.
+      </p>
+      <div className='p-4'></div>
       {/* Projects slider */}
       <ProjectsContainer />
       <div className='p-4'></div>

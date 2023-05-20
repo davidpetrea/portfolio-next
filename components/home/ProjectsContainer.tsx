@@ -53,28 +53,34 @@ type ProjectPropsType = {
   title: string;
   subtitle: string;
   description: JSX.Element;
-  imagePath: string;
+  imagePath?: string;
   technologies: string[];
-  url: string;
+  url?: string;
+  githubUrl?: string;
 };
 
 const Project = ({ project }: { project: ProjectPropsType }) => {
   return (
     <div className='flex flex-col gap-2 lg:flex-row'>
-      <Image
-        src={project.imagePath}
-        alt='Project showcase'
-        width={500}
-        height={600}
-        className='mx-auto w-auto h-auto'
-      />
+      {project.imagePath && (
+        <Image
+          src={project.imagePath}
+          alt='Project showcase'
+          width={500}
+          height={600}
+          className='mx-auto w-auto h-auto object-contain'
+        />
+      )}
       <div className='flex-1 '>
         <h2 className='text-2xl font-bold text-center'>{project.title}</h2>
         <h3 className='font-medium text-center text-green-300'>
           - {project.subtitle} -
         </h3>
         <div className='p-4'></div>
-        {project.description}
+        <div className='max-w-lg text-center mx-auto'>
+          {project.description}
+        </div>
+
         <div className='p-2'></div>
         <p className='text-lg font-medium text-green-200'>Built with</p>
         <div className='flex flex-wrap gap-2'>
@@ -84,13 +90,33 @@ const Project = ({ project }: { project: ProjectPropsType }) => {
         </div>
         <div className='p-2'></div>
         <p className='text-lg font-medium text-green-200'>Visit website</p>
-        <Link
-          href={project.url}
-          target='_blank'
-          className='text-sm font-medium hover:text-black'
-        >
-          {project.url}
-        </Link>
+        {project.url ? (
+          <div>
+            <Link
+              href={project.url}
+              target='_blank'
+              className='text-sm font-medium hover:text-black'
+            >
+              {project.url}
+            </Link>
+          </div>
+        ) : (
+          <div>Coming soon...</div>
+        )}
+        {project.githubUrl && (
+          <>
+            <p className='text-lg font-medium text-green-200 mt-2'>
+              Github repo
+            </p>
+            <Link
+              href={project.githubUrl}
+              target='_blank'
+              className='text-sm font-medium hover:text-black'
+            >
+              {project.githubUrl}
+            </Link>
+          </>
+        )}
       </div>
     </div>
   );
